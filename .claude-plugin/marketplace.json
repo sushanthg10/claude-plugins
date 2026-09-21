@@ -1,0 +1,13 @@
+{
+  "name": "sushanthg10",
+  "owner": { "name": "Sushanth" },
+  "plugins": [
+    {
+      "name": "release",
+      "source": "./plugins/release",
+      "description": "Repo-agnostic dev→staging / squash-to-main→production release flow: preflight, deploy-stage, deploy-prod <version> with tag + back-merge. Works with any CI/CD that deploys on push.",
+      "category": "workflow",
+      "keywords": ["release", "deploy", "squash", "git", "ci-cd"]
+    }
+  ]
+}

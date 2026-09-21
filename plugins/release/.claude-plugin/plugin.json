@@ -1,0 +1,7 @@
+{
+  "name": "release",
+  "version": "1.0.0",
+  "description": "dev = staging, main = production built from squash commits. /release:deploy-stage pushes dev; /release:deploy-prod <version> squashes, pushes, tags after green CI, back-merges. Deploys are CI/CD-on-push; nothing is deployed by hand.",
+  "author": { "name": "Sushanth" },
+  "keywords": ["release", "deploy", "squash", "git", "ci-cd"]
+}
