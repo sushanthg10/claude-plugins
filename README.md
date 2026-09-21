@@ -22,3 +22,13 @@ Repo specifics (push account, URLs, platform) are read from the repo's `CLAUDE.m
 auto-loads when an agent is asked to ship/release/squash/tag.
 
 Update after edits: `/plugin marketplace update sushanthg10`.
+
+## flow
+
+Companions for the [Flow](.flow/) harness. Install: `/plugin install flow@sushanthg10`.
+
+| Command                    | What                                                                                  |
+| -------------------------- | ------------------------------------------------------------------------------------- |
+| `/flow:linear [--dry-run]` | mirror `.flow/boards/main.yml` → Linear; pull new Linear issues → board               |
+
+Status is derived from disk (`.flow/archive/` → Done, `.flow/changes/` → In Progress, else Backlog) and never read back from Linear. Per-repo config in `.flow/linear.yml` (`team`, `project_id`, `project_url`); needs the `linear-server` MCP authenticated. Run after `/flow-brief`, `/flow-archive`, or when someone added issues in Linear.

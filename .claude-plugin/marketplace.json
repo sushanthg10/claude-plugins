@@ -1,13 +1,33 @@
 {
   "name": "sushanthg10",
-  "owner": { "name": "Sushanth" },
+  "owner": {
+    "name": "Sushanth"
+  },
   "plugins": [
     {
       "name": "release",
       "source": "./plugins/release",
-      "description": "Repo-agnostic dev→staging / squash-to-main→production release flow: preflight, deploy-stage, deploy-prod <version> with tag + back-merge. Works with any CI/CD that deploys on push.",
+      "description": "Repo-agnostic dev\u2192staging / squash-to-main\u2192production release flow: preflight, deploy-stage, deploy-prod <version> with tag + back-merge. Works with any CI/CD that deploys on push.",
       "category": "workflow",
-      "keywords": ["release", "deploy", "squash", "git", "ci-cd"]
+      "keywords": [
+        "release",
+        "deploy",
+        "squash",
+        "git",
+        "ci-cd"
+      ]
+    },
+    {
+      "name": "flow",
+      "source": "./plugins/flow",
+      "description": "Companions for the Flow harness. /flow:linear mirrors .flow/boards/main.yml into a Linear project: status derived from .flow/changes/ + .flow/archive/, new Linear issues pulled back onto the board. Config in .flow/linear.yml.",
+      "category": "workflow",
+      "keywords": [
+        "flow",
+        "linear",
+        "board",
+        "sync"
+      ]
     }
   ]
 }

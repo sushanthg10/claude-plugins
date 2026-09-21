@@ -1,0 +1,7 @@
+{
+  "name": "flow",
+  "version": "1.0.0",
+  "description": "Companions for the Flow harness (.flow/). /flow:linear mirrors .flow/boards/main.yml into a Linear project — status derived from .flow/changes/ and .flow/archive/, new Linear issues pulled back onto the board.",
+  "author": { "name": "Sushanth" },
+  "keywords": ["flow", "linear", "board", "sync"]
+}
