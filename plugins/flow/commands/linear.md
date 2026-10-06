@@ -14,6 +14,8 @@ Read `.flow/linear.yml` in the repo root:
 team: Edac Software Labs                          # Linear team name or id
 project_id: 36da64af-88ac-4bb6-a0f7-d70e3055dba7  # Linear project UUID — always the id, names collide
 project_url: https://linear.app/<ws>/project/<slug>
+surface: backend                                  # optional: this repo's surface. Issues labelled
+                                                  # surface:<other> are left for the repo that owns them.
 ```
 
 Missing file → stop and print that block as a template. Ask for the team; then offer to create the project via `save_project` (name = repo folder name) and write the file. Wait.
@@ -63,6 +65,7 @@ Apply these without asking; they are idempotent and derived. Batch many `save_is
 For each issue in the project whose title matches no board `name`:
 
 - Status `Canceled` or `Done` → skip (report only). The board is not a place for work nobody means to do.
+- Labelled for a surface this repo does not own → skip (report only). A repo's board plans that repo's work; an issue labelled `surface:mobile` in a backend repo belongs to the phone app and is tracked elsewhere. Match the label against the surface named in `.flow/linear.yml` (`surface:` key); with no such key, no issue is skipped on this ground.
 - Otherwise it is a **new intent raised in Linear**. Do not invent a name silently:
   1. Sanitize the title into a candidate `name` per the Flow name convention (lowercase-kebab-case `[a-z][a-z0-9]*(-[a-z0-9]+)*`, 2–5 content-bearing words, no `add-`/`fix-`/`new-`/`update-`/`remove-` prefixes).
   2. Present all candidates at once — `EDA-NN "<title>" → <candidate-name>` — via a choice prompt. Wait for the user to confirm, rename, or skip each.
